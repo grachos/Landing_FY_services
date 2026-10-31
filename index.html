@@ -115,7 +115,7 @@ section{padding-block:5rem}
 .line h3{font-size:1.65rem;display:flex;align-items:center;gap:.7rem}
 .line h3 svg{width:28px;height:28px;color:var(--gold);flex:none}
 .line p{color:var(--muted)}
-.line.main{grid-row:span 3;border-color:var(--gold-lo);background:linear-gradient(160deg,#0e1830,var(--ink) 60%)}
+.line.main{grid-row:span 4;border-color:var(--gold-lo);background:linear-gradient(160deg,#0e1830,var(--ink) 60%)}
 .forms{list-style:none;margin:.4rem 0 0;padding:0;display:grid;gap:0}
 .forms li{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.62rem 0;border-top:1px solid var(--line);font-weight:500}
 .forms li code{font:700 .82rem/1 var(--f-body);letter-spacing:.06em;color:var(--gold-hi);white-space:nowrap;border:1px solid var(--gold-lo);border-radius:4px;padding:.28rem .45rem}
@@ -275,6 +275,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
   <symbol id="i-pass" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="10" r="3.2"/><path d="M8 17h8"/></g></symbol>
   <symbol id="i-tax" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9 13h7M9 17h5"/></g></symbol>
   <symbol id="i-biz" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></g></symbol>
+  <symbol id="i-int" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h10v7H8l-3 3v-3H3z"/><path d="M13 9h8v7h-2v3l-3-3h-3a2 2 0 0 1-2-2"/><path d="M6 8.5h4"/></g></symbol>
   <symbol id="i-adm" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l1 2h3v16H5V5h3z"/><path d="m9 13 2 2 4-4"/></g></symbol>
 </svg>
 
@@ -317,7 +318,8 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
             <option>Asilo (I-589)</option>
             <option>Petición familiar o por matrimonio (I-130)</option>
             <option>Visa U / Visa Juvenil SIJS</option>
-            <option>Visa EB-2 o visa B1/B2</option>
+            <option>Visa de turismo B1/B2</option>
+            <option>Visa EB-2</option>
             <option>Cambio de corte o de dirección</option>
             <option>Expediente para corte de inmigración</option>
             <option>Taxes e impuestos</option>
@@ -348,7 +350,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
       <div class="sec-head">
         <p class="eyebrow">Servicios</p>
         <h2>Soluciones en un solo lugar</h2>
-        <p>Cuatro líneas de servicio para acompañarte como persona, como familia y como emprendedor.</p>
+        <p>Cinco líneas de servicio para acompañarte como persona, como familia y como emprendedor.</p>
       </div>
       <div class="lines">
         <article class="line main">
@@ -360,8 +362,8 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
             <li>Asilo <code>I-589</code></li>
             <li>Peticiones familiares y por matrimonio <code>I-130</code></li>
             <li>Visa U · Visa Juvenil <code>SIJS</code></li>
-            <li>Visa de trabajo EB-2 <code>EB-2</code></li>
-            <li>Visa de turismo y negocios <code>DS-160</code></li>
+            <li>Visa de turismo B1 y B2 <code>DS-160</code></li>
+            <li>Visa EB-2 <code>EB-2</code></li>
             <li>Cambio de sede de corte <code>EOIR-33</code></li>
             <li>Cambio de dirección <code>USCIS</code></li>
             <li>Expediente para corte de inmigración <code>EOIR</code></li>
@@ -371,7 +373,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
         </article>
         <article class="line">
           <h3><svg><use href="#i-tax"/></svg>Taxes e impuestos</h3>
-          <p>Preparación de declaraciones de impuestos personales y de negocios, organización de documentos fiscales y registro de ingresos y gastos.</p>
+          <p>Preparación de declaraciones de impuestos personales y de negocios, organización de documentos fiscales y registro de ingresos y gastos, con atención personalizada.</p>
         </article>
         <article class="line">
           <h3><svg><use href="#i-biz"/></svg>Servicios empresariales</h3>
@@ -379,7 +381,11 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
         </article>
         <article class="line">
           <h3><svg><use href="#i-adm"/></svg>Servicios administrativos</h3>
-          <p>Asistencia con formularios, documentación y gestiones del día a día, e interpretación español–inglés en citas y entrevistas ante USCIS.</p>
+          <p>Asistencia con formularios, documentación y diferentes gestiones del día a día.</p>
+        </article>
+        <article class="line">
+          <h3><svg><use href="#i-int"/></svg>Interpretación ante USCIS</h3>
+          <p>Interpretación de español a inglés y de inglés a español, con acompañamiento a tus citas y entrevistas ante USCIS, sujeto a sus reglas.</p>
         </article>
       </div>
     </div>
