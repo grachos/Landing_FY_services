@@ -224,7 +224,7 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 .faq details p{padding:0 1.2rem 1.1rem;color:var(--muted)}
 
 /* footer */
-footer{border-top:1px solid var(--line);background:#000;padding-block:2.5rem 6rem;font-size:.85rem;color:var(--muted)}
+footer{border-top:1px solid var(--line);background:#000;padding-block:2.5rem 9rem;font-size:.85rem;color:var(--muted)}
 footer .wrap{display:grid;gap:1.4rem}
 footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
 .foot-brand{display:flex;align-items:center;gap:1.2rem}
@@ -264,7 +264,8 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
 .chat-form button:disabled{opacity:.5;cursor:wait}
 
 /* mobile action bar */
-.mbar{display:none}
+.wa-fab{display:none}
+.brand img,.brand-text b,.brand-text span,header.site .wrap{transition:height .25s ease,font-size .25s ease,padding .25s ease}
 
 .brand-text b,.brand-text span,nav.links a{white-space:nowrap}
 @media (max-width:1180px){
@@ -291,11 +292,19 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
   .brand-text span{font-size:.56rem;letter-spacing:.12em}
   .foot-brand img{height:72px}
   .foot-brand .brand-text b{font-size:1.25rem}
-  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(4,9,23,.96);border-top:1px solid var(--line);padding:.6rem var(--gutter-r) calc(.6rem + env(safe-area-inset-bottom,0px)) var(--gutter-l)}
-  .mbar .btn{min-height:46px;font-size:.92rem}
+  .wa-fab{display:grid;place-items:center;position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(82px + env(safe-area-inset-bottom,0px));z-index:45;width:54px;height:54px;border-radius:50%;background:var(--wa);color:#04210f;box-shadow:0 10px 24px -8px rgba(0,0,0,.7)}
+  .wa-fab svg{width:28px;height:28px}
+  .chat-open .wa-fab{display:none}
+  .scrolled header.site .wrap{padding-block:.35rem}
+  .scrolled .brand img{height:36px}
+  .scrolled .brand-text b{font-size:.9rem}
+  .scrolled .brand-text span{font-size:.48rem}
+  .scrolled .lang{min-height:36px}
   .monogram .pair{grid-template-columns:90px 1fr}
   .monogram .letter{height:68px}
-  .chat-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));min-height:48px;padding:0 1rem}
+  .chat-fab{right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:54px;height:54px;min-height:0;padding:0;justify-content:center;border-radius:50%}
+  .chat-fab span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .chat-fab svg{width:26px;height:26px}
   .chat{right:0;left:0;bottom:0;width:100%;height:calc(100dvh - env(safe-area-inset-top,0px) - 40px);border-radius:14px 14px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}
   .head-cta{display:none}
 }
@@ -594,10 +603,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
   <form class="chat-form" id="chat-form"><input id="chat-input" maxlength="600" autocomplete="off" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta…"><button id="chat-send" type="submit">Enviar</button></form>
 </section>
 
-<div class="mbar">
-  <a data-wa="general" class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
-  <a class="btn btn-gold" href="#contacto"><svg><use href="#i-phone"/></svg>Llamar</a>
-</div>
+<a class="wa-fab" data-wa="general" href="https://wa.me/16783619234" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <script>
 document.getElementById('yr').textContent=new Date().getFullYear();
@@ -656,6 +662,9 @@ let x0=null;lb.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive
     },1250);
   });
 })();
+</script>
+<script>
+(function(){let on=null;const f=()=>{const v=scrollY>40;if(v!==on){on=v;document.body.classList.toggle('scrolled',v)}};addEventListener('scroll',f,{passive:true});f();})();
 </script>
 <script src="/js/i18n.js"></script>
 <script>
