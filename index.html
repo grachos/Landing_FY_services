@@ -8,7 +8,7 @@
 <meta property="og:description" content="Preparación documental migratoria, taxes, creación de LLC y servicios administrativos para la comunidad latina. Atlanta, GA.">
 <meta property="og:image" content="/assets/logo-fy.png">
 <link rel="icon" type="image/png" href="/assets/logo-fy.png">
-<title>FY Business & Immigration</title>
+<title>FY Business & Immigration Solutions | Atlanta</title>
 <meta name="description" content="FY Business & Immigration Solutions — preparación documental migratoria, taxes, creación de LLC y servicios administrativos para la comunidad latina. Atlanta, GA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap">
@@ -33,6 +33,7 @@
   --maxw:1160px;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{background:var(--night);color:var(--text);font:16px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
 a{color:inherit}
@@ -190,6 +191,35 @@ footer img{height:54px;width:auto}
 .disclaimer{border:1px solid var(--gold-lo);border-radius:8px;padding:1rem 1.2rem;display:grid;gap:.5rem;color:#cfd4df}
 .disclaimer strong{color:var(--gold-hi)}
 
+/* language toggle */
+.head-actions{display:flex;align-items:center;gap:.6rem}
+.lang{min-height:42px;min-width:46px;border:1px solid var(--gold-lo);border-radius:6px;background:transparent;color:var(--gold-hi);font:700 .85rem/1 var(--f-body);letter-spacing:.08em;cursor:pointer}
+.lang:hover{background:rgba(217,178,95,.1)}
+
+/* chat */
+.chat-fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:45;display:flex;align-items:center;gap:.5rem;min-height:52px;padding:0 1.1rem;border-radius:999px;border:1px solid var(--gold-hi);background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1a1305;font:700 .95rem/1 var(--f-body);cursor:pointer;box-shadow:0 12px 30px -8px rgba(0,0,0,.7)}
+.chat-fab svg{width:22px;height:22px}
+.chat-open .chat-fab{display:none}
+.chat{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100dvh - 120px));display:grid;grid-template-rows:auto 1fr auto auto;background:var(--ink);border:1px solid var(--gold-lo);border-radius:12px;box-shadow:0 30px 70px -20px rgba(0,0,0,.9);overflow:hidden}
+.chat[hidden]{display:none}
+.chat-head{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.8rem 1rem;border-bottom:1px solid var(--line);background:var(--night)}
+.chat-head strong{font:700 1.25rem/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em;color:var(--gold-hi)}
+.chat-head p{font-size:.72rem;color:var(--muted);line-height:1.35;margin-top:.25rem}
+.chat-x{min-width:40px;min-height:40px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:1rem;cursor:pointer;flex:none}
+.chat-log{overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.6rem;min-height:0}
+.msg{max-width:86%;padding:.6rem .8rem;border-radius:10px;font-size:.92rem;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.msg.assistant{align-self:flex-start;background:#121d38;border:1px solid var(--line)}
+.msg.user{align-self:flex-end;background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1a1305;font-weight:500}
+.msg.error{border-color:#7a3b3b}
+.msg.typing{color:var(--muted);letter-spacing:.2em}
+.chat-chips{display:flex;flex-wrap:wrap;gap:.4rem;padding:0 1rem .7rem}
+.chat-chips button{border:1px solid var(--gold-lo);background:transparent;color:var(--gold-hi);border-radius:999px;padding:.4rem .7rem;font:600 .8rem/1.2 var(--f-body);cursor:pointer}
+.chat-form{display:flex;gap:.5rem;padding:.7rem;border-top:1px solid var(--line);background:var(--night)}
+.chat-form input{flex:1;min-width:0;font:inherit;font-size:1rem;color:var(--text);background:var(--ink);border:1px solid var(--line);border-radius:6px;padding:.6rem .7rem}
+.chat-form input:focus{border-color:var(--gold);outline:none}
+.chat-form button{min-height:44px;padding:0 1rem;border-radius:6px;border:0;background:var(--gold);color:#1a1305;font:700 .9rem/1 var(--f-body);cursor:pointer}
+.chat-form button:disabled{opacity:.5;cursor:wait}
+
 /* mobile action bar */
 .mbar{display:none}
 
@@ -208,6 +238,9 @@ footer img{height:54px;width:auto}
   .mbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(4,9,23,.96);border-top:1px solid var(--line);padding:.6rem var(--gutter-r) calc(.6rem + env(safe-area-inset-bottom,0px)) var(--gutter-l)}
   .mbar .btn{min-height:46px;font-size:.92rem}
   .monogram .pair b{font-size:4.2rem}
+  .chat-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));min-height:48px;padding:0 1rem}
+  .chat{right:0;left:0;bottom:0;width:100%;height:calc(100dvh - env(safe-area-inset-top,0px) - 40px);border-radius:14px 14px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}
+  .head-cta{display:none}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
@@ -230,7 +263,8 @@ footer img{height:54px;width:auto}
     <nav class="links" aria-label="Secciones">
       <a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#historia">Nosotros</a><a href="#contacto">Contacto</a>
     </nav>
-    <a class="btn btn-wa head-cta" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Escríbenos</span></a>
+    <div class="head-actions"><button class="lang" id="lang-btn" type="button" aria-label="Switch to English">EN</button>
+    <a class="btn btn-wa head-cta" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Escríbenos</span></a></div>
   </div>
 </header>
 
@@ -454,6 +488,17 @@ footer img{height:54px;width:auto}
   </div>
 </dialog>
 
+<button class="chat-fab" id="chat-fab" type="button" aria-controls="chat" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.9A8 8 0 1 1 21 12Z"/><path stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M8.5 12h.01M12 12h.01M15.5 12h.01"/></svg><span>Pregúntanos</span></button>
+<section class="chat" id="chat" role="dialog" aria-label="Asistente FY" hidden style="padding:0">
+  <div class="chat-head">
+    <div><strong>Asistente FY</strong><p>Asistente virtual con IA. Responde sobre nuestros servicios; no da asesoría legal.</p></div>
+    <button class="chat-x" id="chat-x" type="button" aria-label="Cerrar chat">✕</button>
+  </div>
+  <div class="chat-log" id="chat-log" aria-live="polite" data-noi18n></div>
+  <div class="chat-chips" id="chat-chips"><button type="button">¿Qué servicios ofrecen?</button><button type="button">¿Cuál es el horario?</button><button type="button">¿Ayudan con el permiso de trabajo?</button></div>
+  <form class="chat-form" id="chat-form"><input id="chat-input" maxlength="600" autocomplete="off" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta…"><button id="chat-send" type="submit">Enviar</button></form>
+</section>
+
 <div class="mbar">
   <a class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
   <a class="btn btn-gold" href="#contacto"><svg><use href="#i-phone"/></svg>Llamar</a>
@@ -464,14 +509,14 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 document.getElementById('lead').addEventListener('submit',e=>{
   e.preventDefault();
   const f=e.target,name=f.name.value.trim(),phone=f.phone.value.trim();
-  if(!name||!phone){(name?f.phone:f.name).focus();(name?f.phone:f.name).setCustomValidity('Completa este campo');f.reportValidity();return}
-  const txt=`Hola, soy ${name}. Mi teléfono es ${phone}. Me interesa: ${f.svc.value}.`+(f.msg.value.trim()?` ${f.msg.value.trim()}`:'');
+  if(!name||!phone){(name?f.phone:f.name).focus();(name?f.phone:f.name).setCustomValidity(window.FY_LANG.t('Completa este campo'));f.reportValidity();return}
+  const en=window.FY_LANG.get()==='en';const txt=(en?`Hi, I'm ${name}. My phone is ${phone}. I'm interested in: ${f.svc.options[f.svc.selectedIndex].text}.`:`Hola, soy ${name}. Mi teléfono es ${phone}. Me interesa: ${f.svc.options[f.svc.selectedIndex].text}.`)+(f.msg.value.trim()?` ${f.msg.value.trim()}`:'');
   document.getElementById('sent-link').href=`https://wa.me/${f.to.value}?text=${encodeURIComponent(txt)}`;
   document.getElementById('sent').hidden=false;
 });
 ['f-name','f-phone'].forEach(id=>document.getElementById(id).addEventListener('input',e=>e.target.setCustomValidity('')));
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
-  const v=b.dataset.copy,done=()=>{const t=b.textContent;b.textContent='Copiado';setTimeout(()=>b.textContent=t,1500)};
+  const v=b.dataset.copy,done=()=>{const t=b.textContent;b.textContent=window.FY_LANG.t('Copiado');setTimeout(()=>b.textContent=t,1500)};
   navigator.clipboard?.writeText(v).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(b.closest('.person').querySelector('.phone'));getSelection().removeAllRanges();getSelection().addRange(r)});
 }));
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),figs=[...document.querySelectorAll('.gallery figure')];let cur=0;
@@ -483,5 +528,8 @@ document.getElementById('lb-stage').addEventListener('click',e=>{if(e.target.id=
 lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
 let x0=null;lb.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));x0=null});
 </script>
+<script src="/js/i18n.js"></script>
+<script>window.FY_LANG.init()</script>
+<script src="/js/chat.js"></script>
 </body>
 </html>
