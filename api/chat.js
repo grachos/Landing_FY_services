@@ -1,6 +1,6 @@
 // Vercel serverless function: POST /api/chat  { messages: [{role, content}], lang: 'es'|'en' }
-// Env: OPENAI_API_KEY (required), OPENAI_MODEL (optional, default gpt-5-mini), OPENAI_REASONING_EFFORT (optional, default minimal)
-const KNOWLEDGE = require('./knowledge');
+// Env: OPENAI_API_KEY (required), OPENAI_MODEL (optional, default gpt-5-mini), OPENAI_REASONING_EFFORT (optional, default low)
+const { KNOWLEDGE, EXAMPLES } = require('./knowledge');
 
 const MAX_TURNS = 12;        // messages kept from the conversation
 const MAX_CHARS = 600;       // per user message
@@ -26,7 +26,8 @@ STRICT RULES:
 - WhatsApp contacts: Ysbell +1 (678) 361-9234 or Franklin +1 (470) 778-1210.
 
 BUSINESS INFORMATION:
-${KNOWLEDGE}`;
+${KNOWLEDGE}
+${EXAMPLES}`;
 
 function clientIp(req) {
   return (req.headers['x-forwarded-for'] || '').split(',')[0].trim() || req.socket?.remoteAddress || 'unknown';
@@ -69,7 +70,7 @@ module.exports = async (req, res) => {
     messages: [{ role: 'system', content: SYSTEM(lang) }, ...clean],
     max_completion_tokens: 800,
   };
-  if (/^(gpt-5|o\d)/.test(model)) payload.reasoning_effort = process.env.OPENAI_REASONING_EFFORT || 'minimal';
+  if (/^(gpt-5|o\d)/.test(model)) payload.reasoning_effort = process.env.OPENAI_REASONING_EFFORT || 'low';
 
   try {
     const r = await fetch('https://api.openai.com/v1/chat/completions', {

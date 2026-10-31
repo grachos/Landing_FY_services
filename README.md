@@ -22,7 +22,7 @@ Import the repo in Vercel → Framework preset: **Other** → no build command, 
 |---|---|---|
 | `OPENAI_API_KEY` | yes | — |
 | `OPENAI_MODEL` | no | `gpt-5-mini` |
-| `OPENAI_REASONING_EFFORT` | no | `minimal` (only for gpt-5 / o-series models) |
+| `OPENAI_REASONING_EFFORT` | no | `low` (only for gpt-5 / o-series models) |
 
 Redeploy after adding or changing a variable.
 

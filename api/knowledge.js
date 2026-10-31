@@ -1,5 +1,5 @@
 // Business knowledge for the FY chat assistant. Source: information sent by Franklin Perea (emails of 2026-10-31) and the service flyers.
-module.exports = `
+const KNOWLEDGE = `
 # FY BUSINESS & IMMIGRATION SOLUTIONS
 Tagline: "Tu futuro merece la mejor decisión." / "Your future deserves the best decision."
 Location: Atlanta, Georgia, USA. In-person service in Atlanta; anyone in any US state can contact us by WhatsApp. (No public street address yet: ask the person to write on WhatsApp for the address/appointment.)
@@ -42,6 +42,24 @@ Mission: provide complete immigration, tax, administrative and business services
 Vision: be a recognized and trusted company nationwide, offering many solutions in one place, in person and through digital platforms, for clients in any state.
 Philosophy: not just a company that does paperwork, but one that supports the community through the personal, family and business stages of their lives.
 
-## Unknown (do not invent)
-Prices/fees, exact office address, email and social media are not published. For these, invite the person to write on WhatsApp.
-`;
+## NOT KNOWN — never answer yes or no to these; say you don't have that information and point to WhatsApp
+- Prices, fees, discounts, payment plans
+- Payment methods (cash, card, Zelle, etc.)
+- Whether walk-ins are accepted or an appointment is required
+- Exact office address, parking, directions
+- Email, website other than this one, social media
+- Processing times or approval times of USCIS / courts
+- Online/video appointments, home visits
+- Any service not listed above (translations, driver's licenses, notary, insurance, etc.)
+- Staff other than Franklin Perea and Ysbell Matheus, licenses or certifications held`;
+// Few-shot examples appended to the system prompt
+const EXAMPLES = `
+EXAMPLES OF CORRECT ANSWERS
+Q: ¿Aceptan pago con tarjeta?
+A: No tengo esa información. Escríbenos por WhatsApp y te confirmamos: Ysbell +1 (678) 361-9234 o Franklin +1 (470) 778-1210.
+Q: Can I walk in without an appointment?
+A: I don't have that information. Please message us on WhatsApp to confirm before you come: Ysbell +1 (678) 361-9234 or Franklin +1 (470) 778-1210.
+Q: ¿Hacen traducciones?
+A: Ese servicio no aparece en nuestra lista. Pregúntanos por WhatsApp y te confirmamos.`;
+
+module.exports = { KNOWLEDGE, EXAMPLES };
