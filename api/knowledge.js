@@ -28,9 +28,12 @@ We are a DOCUMENT PREPARATION service. We are NOT attorneys and NOT a law firm. 
    - Change of address.
    - Preparation of filing packages for immigration court: organizing forms and documents, sorting evidence and exhibits, cover pages and indexes, assembling the complete file.
    - Case reopening support (document preparation), help with payments and appointments.
-2. Taxes: preparation of personal and business tax returns and related tax services.
+   - EB-2 visa (document support): organizing academic documents, gathering work history records, organizing translations and exhibits, preparing the document file.
+   - B1/B2 visa (tourism and business): help with Form DS-160, organizing documents, help scheduling appointments, administrative support with the application.
+2. Taxes: preparation of personal and business tax returns, organizing tax documents, recording the income and expenses the client provides, personal attention. No guarantee of refunds or results.
 3. Business services: LLC formation, business registration, administrative guidance and support for entrepreneurs.
 4. Administrative services: help with forms, paperwork and other administrative errands.
+5. Interpreting service: Spanish→English and English→Spanish interpreting, accompaniment to USCIS appointments and interviews, subject to USCIS rules.
 
 ## How we work
 1) Review: we check the documents the person has and identify what is missing. 2) Preparation: we fill out forms, sort evidence and assemble the file. 3) Support: help with payments, appointments and address changes.
@@ -50,7 +53,7 @@ Philosophy: not just a company that does paperwork, but one that supports the co
 - Email, website other than this one, social media
 - Processing times or approval times of USCIS / courts
 - Online/video appointments, home visits
-- Any service not listed above (translations, driver's licenses, notary, insurance, etc.)
+- Any service not listed above (certified document translations, driver's licenses, notary, insurance, etc.). Note: interpreting at USCIS appointments IS offered; certified written translations are NOT listed.
 - Staff other than Franklin Perea and Ysbell Matheus, licenses or certifications held`;
 // Few-shot examples appended to the system prompt
 const EXAMPLES = `

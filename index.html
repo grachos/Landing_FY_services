@@ -7,7 +7,7 @@
 <meta property="og:title" content="FY Business & Immigration Solutions">
 <meta property="og:description" content="Preparación documental migratoria, taxes, creación de LLC y servicios administrativos para la comunidad latina. Atlanta, GA.">
 <meta property="og:image" content="/assets/logo-fy.png">
-<link rel="icon" type="image/png" href="/assets/logo-fy.png">
+<link rel="icon" type="image/png" href="/assets/fy-mark.png">
 <title>FY Business & Immigration Solutions | Atlanta</title>
 <meta name="description" content="FY Business & Immigration Solutions — preparación documental migratoria, taxes, creación de LLC y servicios administrativos para la comunidad latina. Atlanta, GA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +62,11 @@ p{margin:0}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(4,9,23,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--night)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.6rem}
-.brand img{height:44px;width:auto;display:block}
+.brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
+.brand img{height:52px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(217,178,95,.25))}
+.brand-text{display:grid;gap:.18rem;line-height:1;border-left:1px solid var(--gold-lo);padding-left:.8rem}
+.brand-text b{font:700 1.05rem/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase}
+.brand-text span{font:600 .64rem/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 nav.links{display:flex;gap:1.6rem;font-size:.9rem;font-weight:600;color:var(--muted)}
 nav.links a{text-decoration:none}
 nav.links a:hover{color:var(--gold-hi)}
@@ -118,8 +122,14 @@ section{padding-block:5rem}
 .limit{font-size:.82rem;color:var(--muted);border-left:2px solid var(--gold);padding-left:.8rem;margin-top:.4rem}
 
 /* gallery */
-.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;scrollbar-color:var(--gold-lo) transparent}
-.gallery figure{margin:0;scroll-snap-align:start}
+.g-filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem}
+.g-filters button{min-height:40px;padding:0 1rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font:600 .88rem/1 var(--f-body);cursor:pointer}
+.g-filters button[aria-pressed="true"]{border-color:var(--gold);color:#1a1305;background:linear-gradient(180deg,var(--gold-hi),var(--gold))}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem 1rem}
+.gallery figure{margin:0;min-width:0}
+.g-more{display:flex;justify-content:center;margin-top:1.6rem}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:600px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .75rem}.zoom-hint{display:none}}
 .gallery button{all:unset;display:block;width:100%;cursor:zoom-in;border-radius:8px;position:relative}
 .gallery button:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
 .gallery img{width:100%;max-width:100%;aspect-ratio:4/5;object-fit:contain;border-radius:8px;border:1px solid var(--line);display:block;background:#000;transition:transform .2s,border-color .2s}
@@ -146,7 +156,8 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 .story{background:#000;border-block:1px solid var(--line)}
 .story .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:3.5rem;align-items:center}
 .monogram{display:grid;gap:1rem}
-.monogram .pair{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem;align-items:baseline}
+.monogram .pair{display:grid;grid-template-columns:120px 1fr;gap:.2rem 1.4rem;align-items:center}
+.monogram .letter{height:90px;width:auto;justify-self:center;filter:drop-shadow(0 4px 14px rgba(217,178,95,.2))}
 .monogram .pair b{font:800 5.5rem/0.95 var(--f-display)}
 .monogram .pair span{color:var(--muted);font-size:.95rem}
 .monogram .pair span strong{display:block;color:var(--text);font-size:1.15rem}
@@ -187,7 +198,10 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 footer{border-top:1px solid var(--line);background:#000;padding-block:2.5rem 6rem;font-size:.85rem;color:var(--muted)}
 footer .wrap{display:grid;gap:1.4rem}
 footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
-footer img{height:54px;width:auto}
+.foot-brand{display:flex;align-items:center;gap:1.2rem}
+.foot-brand img{height:96px;width:auto}
+.foot-brand .brand-text b{font-size:1.6rem}
+.foot-brand .brand-text span{font-size:.78rem}
 .disclaimer{border:1px solid var(--gold-lo);border-radius:8px;padding:1rem 1.2rem;display:grid;gap:.5rem;color:#cfd4df}
 .disclaimer strong{color:var(--gold-hi)}
 
@@ -234,10 +248,15 @@ footer img{height:54px;width:auto}
 }
 @media (max-width:600px){
   .head-cta span{display:none}
-  .brand img{height:38px}
+  .brand img{height:42px}
+  .brand-text b{font-size:.92rem;letter-spacing:.1em}
+  .brand-text span{font-size:.54rem;letter-spacing:.12em}
+  .foot-brand img{height:72px}
+  .foot-brand .brand-text b{font-size:1.25rem}
   .mbar{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(4,9,23,.96);border-top:1px solid var(--line);padding:.6rem var(--gutter-r) calc(.6rem + env(safe-area-inset-bottom,0px)) var(--gutter-l)}
   .mbar .btn{min-height:46px;font-size:.92rem}
-  .monogram .pair b{font-size:4.2rem}
+  .monogram .pair{grid-template-columns:90px 1fr}
+  .monogram .letter{height:68px}
   .chat-fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));min-height:48px;padding:0 1rem}
   .chat{right:0;left:0;bottom:0;width:100%;height:calc(100dvh - env(safe-area-inset-top,0px) - 40px);border-radius:14px 14px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}
   .head-cta{display:none}
@@ -259,7 +278,7 @@ footer img{height:54px;width:auto}
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#inicio" aria-label="FY Business & Immigration Solutions, inicio"><img src="assets/logo-fy.png" alt="FY Business & Immigration Solutions"></a>
+    <a class="brand" href="#inicio" aria-label="FY Business & Immigration Solutions, inicio"><img src="assets/fy-mark.png" alt="" width="81" height="52"><span class="brand-text" aria-hidden="true"><b class="gold-text">FY Business</b><span>&amp; Immigration Solutions</span></span></a>
     <nav class="links" aria-label="Secciones">
       <a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#historia">Nosotros</a><a href="#contacto">Contacto</a>
     </nav>
@@ -294,9 +313,11 @@ footer img{height:54px;width:auto}
             <option>Asilo (I-589)</option>
             <option>Petición familiar o por matrimonio (I-130)</option>
             <option>Visa U / Visa Juvenil SIJS</option>
+            <option>Visa EB-2 o visa B1/B2</option>
             <option>Cambio de corte o de dirección</option>
             <option>Expediente para corte de inmigración</option>
             <option>Taxes e impuestos</option>
+            <option>Interpretación para cita en USCIS</option>
             <option>Crear una LLC o registrar mi negocio</option>
             <option>Otro trámite administrativo</option>
           </select>
@@ -335,6 +356,8 @@ footer img{height:54px;width:auto}
             <li>Asilo <code>I-589</code></li>
             <li>Peticiones familiares y por matrimonio <code>I-130</code></li>
             <li>Visa U · Visa Juvenil <code>SIJS</code></li>
+            <li>Visa de trabajo EB-2 <code>EB-2</code></li>
+            <li>Visa de turismo y negocios <code>DS-160</code></li>
             <li>Cambio de sede de corte <code>EOIR-33</code></li>
             <li>Cambio de dirección <code>USCIS</code></li>
             <li>Expediente para corte de inmigración <code>EOIR</code></li>
@@ -344,7 +367,7 @@ footer img{height:54px;width:auto}
         </article>
         <article class="line">
           <h3><svg><use href="#i-tax"/></svg>Taxes e impuestos</h3>
-          <p>Preparación de declaraciones de impuestos personales y de negocios, y servicios tributarios relacionados.</p>
+          <p>Preparación de declaraciones de impuestos personales y de negocios, organización de documentos fiscales y registro de ingresos y gastos.</p>
         </article>
         <article class="line">
           <h3><svg><use href="#i-biz"/></svg>Servicios empresariales</h3>
@@ -352,7 +375,7 @@ footer img{height:54px;width:auto}
         </article>
         <article class="line">
           <h3><svg><use href="#i-adm"/></svg>Servicios administrativos</h3>
-          <p>Asistencia con formularios, documentación y diferentes gestiones del día a día.</p>
+          <p>Asistencia con formularios, documentación y gestiones del día a día, e interpretación español–inglés en citas y entrevistas ante USCIS.</p>
         </article>
       </div>
     </div>
@@ -363,16 +386,27 @@ footer img{height:54px;width:auto}
       <div class="sec-head" style="margin-bottom:1.6rem">
         <h2 id="g-title" style="font-size:clamp(1.7rem,3vw,2.2rem)">Conoce cada trámite</h2>
       </div>
-      <div class="gallery" tabindex="0" aria-label="Piezas informativas de cada trámite">
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-diagnostico.jpg" alt="Diagnóstico del caso: revisión documental y administrativa" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Diagnóstico del caso</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-i765.jpg" alt="Permiso de trabajo I-765: preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Permiso de trabajo · I-765</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-i589.jpg" alt="Asilo I-589: preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Asilo · I-589</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-i130.jpg" alt="Petición por matrimonio, formulario I-130" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Petición por matrimonio · I-130</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-visau.jpg" alt="Visa U: asistencia en la preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Visa U</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-sijs.jpg" alt="Visa Juvenil SIJS: asistencia en la preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Visa Juvenil · SIJS</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-corte.jpg" alt="Cambio de corte: moción de cambio de sede y formulario EOIR-33" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Cambio de corte · EOIR-33</figcaption></figure>
-        <figure><button type="button" aria-label="Ampliar imagen"><img src="assets/s-expediente.jpg" alt="Preparación de expediente para corte de inmigración" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Expediente para corte</figcaption></figure>
+      <div class="g-filters" role="group" aria-label="Filtrar trámites">
+        <button type="button" data-f="all" aria-pressed="true">Todos</button>
+        <button type="button" data-f="inm" aria-pressed="false">Inmigración</button>
+        <button type="button" data-f="visas" aria-pressed="false">Visas</button>
+        <button type="button" data-f="otros" aria-pressed="false">Taxes e interpretación</button>
       </div>
+      <div class="gallery" id="gallery" aria-label="Piezas informativas de cada trámite">
+        <figure data-cat="inm"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-diagnostico.jpg" alt="Diagnóstico del caso: revisión documental y administrativa" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Diagnóstico del caso</figcaption></figure>
+        <figure data-cat="inm"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-i765.jpg" alt="Permiso de trabajo I-765: preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Permiso de trabajo · I-765</figcaption></figure>
+        <figure data-cat="inm"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-i589.jpg" alt="Asilo I-589: preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Asilo · I-589</figcaption></figure>
+        <figure data-cat="inm"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-i130.jpg" alt="Petición por matrimonio, formulario I-130" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Petición por matrimonio · I-130</figcaption></figure>
+        <figure data-cat="visas"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-eb2.jpg" alt="Visa EB-2: apoyo documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Visa EB-2</figcaption></figure>
+        <figure data-cat="visas"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-b1b2.jpg" alt="Visa B1/B2 turismo y negocios: formulario DS-160" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Visa B1/B2 · DS-160</figcaption></figure>
+        <figure data-cat="otros"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-taxes.jpg" alt="Preparación de taxes: declaración de impuestos" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Preparación de taxes</figcaption></figure>
+        <figure data-cat="otros"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-interpretacion.jpg" alt="Servicio de interpretación en citas y entrevistas ante USCIS" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Interpretación ante USCIS</figcaption></figure>
+        <figure data-cat="visas"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-visau.jpg" alt="Visa U: asistencia en la preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Visa U</figcaption></figure>
+        <figure data-cat="visas"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-sijs.jpg" alt="Visa Juvenil SIJS: asistencia en la preparación documental" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Visa Juvenil · SIJS</figcaption></figure>
+        <figure data-cat="inm"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-corte.jpg" alt="Cambio de corte: moción de cambio de sede y formulario EOIR-33" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Cambio de corte · EOIR-33</figcaption></figure>
+        <figure data-cat="inm"><button type="button" aria-label="Ampliar imagen"><img src="assets/s-expediente.jpg" alt="Preparación de expediente para corte de inmigración" loading="lazy"><span class="zoom-hint">Ampliar</span></button><figcaption>Expediente para corte</figcaption></figure>
+      </div>
+      <div class="g-more"><button class="btn btn-ghost" type="button" id="g-more">Ver todos</button></div>
     </div>
   </section>
 
@@ -393,8 +427,8 @@ footer img{height:54px;width:auto}
   <section class="story" id="historia">
     <div class="wrap">
       <div class="monogram">
-        <div class="pair"><b class="gold-text">F</b><span><strong>Franklin</strong>Perea</span></div>
-        <div class="pair"><b class="gold-text">Y</b><span><strong>Ysbell</strong>Matheus</span></div>
+        <div class="pair"><img class="letter" src="assets/fy-f.png" alt="F" width="81" height="90"><span><strong>Franklin</strong>Perea</span></div>
+        <div class="pair"><img class="letter" src="assets/fy-y.png" alt="Y" width="113" height="90"><span><strong>Ysbell</strong>Matheus</span></div>
         <p class="fy-def"><dfn>FY · Fiscal Year</dfn> — año fiscal: el período con el que las empresas planifican, organizan y crecen.</p>
       </div>
       <div class="story-text">
@@ -469,7 +503,7 @@ footer img{height:54px;width:auto}
 <footer>
   <div class="wrap">
     <div class="top">
-      <img src="assets/logo-fy.png" alt="FY Business & Immigration Solutions">
+      <div class="foot-brand"><img src="assets/fy-mark.png" alt="FY Business & Immigration Solutions" width="149" height="96"><span class="brand-text" aria-hidden="true"><b class="gold-text">FY Business</b><span>&amp; Immigration Solutions</span></span></div>
       <p class="script" style="font-size:1.35rem;color:var(--gold-hi)">Tu futuro merece la mejor decisión.</p>
     </div>
     <div class="disclaimer">
@@ -519,9 +553,15 @@ document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',(
   const v=b.dataset.copy,done=()=>{const t=b.textContent;b.textContent=window.FY_LANG.t('Copiado');setTimeout(()=>b.textContent=t,1500)};
   navigator.clipboard?.writeText(v).then(done).catch(()=>{const r=document.createRange();r.selectNodeContents(b.closest('.person').querySelector('.phone'));getSelection().removeAllRanges();getSelection().addRange(r)});
 }));
-const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),figs=[...document.querySelectorAll('.gallery figure')];let cur=0;
+const allFigs=[...document.querySelectorAll('.gallery figure')],LIMIT=8;let gFilter='all',gExpanded=false,figs=allFigs;
+function renderGallery(){const m=allFigs.filter(f=>gFilter==='all'||f.dataset.cat===gFilter);const cut=gFilter==='all'&&!gExpanded&&m.length>LIMIT;allFigs.forEach(f=>f.hidden=true);m.forEach((f,i)=>f.hidden=cut&&i>=LIMIT);figs=allFigs.filter(f=>!f.hidden);const more=document.getElementById('g-more');more.parentElement.hidden=!cut;more.dataset.n=m.length;more.textContent=window.FY_LANG?window.FY_LANG.t('Ver todos')+' ('+m.length+')':'Ver todos ('+m.length+')'}
+document.querySelectorAll('.g-filters button').forEach(b=>b.addEventListener('click',()=>{gFilter=b.dataset.f;document.querySelectorAll('.g-filters button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));renderGallery()}));
+document.getElementById('g-more').addEventListener('click',()=>{gExpanded=true;renderGallery()});
+document.addEventListener('fy:lang',renderGallery);
+renderGallery();
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img');let cur=0;
 function show(i){cur=(i+figs.length)%figs.length;const im=figs[cur].querySelector('img');lbImg.src=im.src;lbImg.alt=im.alt;document.getElementById('lb-cap').textContent=figs[cur].querySelector('figcaption').textContent;document.getElementById('lb-n').textContent=(cur+1)+' / '+figs.length}
-figs.forEach((f,i)=>f.querySelector('button').addEventListener('click',()=>{show(i);lb.showModal?lb.showModal():lb.setAttribute('open','')}));
+allFigs.forEach(f=>f.querySelector('button').addEventListener('click',()=>{show(figs.indexOf(f));lb.showModal?lb.showModal():lb.setAttribute('open','')}));
 const close=()=>lb.close?lb.close():lb.removeAttribute('open');
 document.getElementById('lb-x').onclick=close;document.getElementById('lb-prev').onclick=()=>show(cur-1);document.getElementById('lb-next').onclick=()=>show(cur+1);
 document.getElementById('lb-stage').addEventListener('click',e=>{if(e.target.id==='lb-stage')close()});
