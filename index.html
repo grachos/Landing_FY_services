@@ -8,6 +8,13 @@
 <meta property="og:description" content="Preparación documental migratoria, taxes, creación de LLC y servicios administrativos para la comunidad latina. Atlanta, GA.">
 <meta property="og:image" content="/assets/logo-fy.png">
 <link rel="icon" type="image/png" href="/assets/fy-mark.png">
+<script>
+(function(){try{
+  var seen=sessionStorage.getItem('fy-intro');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!seen&&!reduce){document.documentElement.classList.add('intro');sessionStorage.setItem('fy-intro','1');}
+}catch(e){}})();
+</script>
 <title>FY Business & Immigration Solutions | Atlanta</title>
 <meta name="description" content="FY Business & Immigration Solutions — preparación documental migratoria, taxes, creación de LLC y servicios administrativos para la comunidad latina. Atlanta, GA.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,6 +66,15 @@ p{margin:0}
 .notice strong{color:var(--gold-hi);font-weight:600}
 
 /* header */
+/* intro: big logo flies into the header */
+#intro{display:none}
+.intro #intro{display:block;position:fixed;inset:0;z-index:200;background:var(--night);cursor:pointer;transition:background-color .6s ease .35s}
+.intro #intro.leaving{background-color:rgba(4,9,23,0)}
+#intro .brand{position:fixed;transform-origin:center center;opacity:0;transition:opacity .6s ease;will-change:transform,opacity}
+#intro .brand.shown{opacity:1}
+#intro .brand.flying{transition:transform .95s cubic-bezier(.7,0,.2,1)}
+.intro header.site,.intro .notice{opacity:0}
+header.site,.notice{transition:opacity .45s ease}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(4,9,23,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--night)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.6rem}
@@ -298,6 +314,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
 
 <div class="notice"><div class="wrap"><strong>No somos abogados.</strong> Ofrecemos preparación documental; no damos representación ni asesoría legal.</div></div>
 
+<div id="intro" aria-hidden="true"><span class="brand"><img src="assets/fy-mark.png" alt="" width="118" height="76"><span class="brand-text"><b class="gold-text">FY Business</b><span>&amp; Immigration Solutions</span></span></span></div>
 <header class="site">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="FY Business & Immigration Solutions, inicio"><img src="assets/fy-mark.png" alt="" width="81" height="52"><span class="brand-text" aria-hidden="true"><b class="gold-text">FY Business</b><span>&amp; Immigration Solutions</span></span></a>
@@ -608,6 +625,34 @@ document.getElementById('lb-x').onclick=close;document.getElementById('lb-prev')
 document.getElementById('lb-stage').addEventListener('click',e=>{if(e.target.id==='lb-stage')close()});
 lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
 let x0=null;lb.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});lb.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>50)show(cur+(dx<0?1:-1));x0=null});
+</script>
+<script>
+(function(){
+  const root=document.documentElement;
+  if(!root.classList.contains('intro'))return;
+  const ov=document.getElementById('intro'),big=ov.querySelector('.brand'),target=document.querySelector('header.site .brand');
+  let done=false;
+  const finish=()=>{if(done)return;done=true;root.classList.remove('intro');ov.remove();};
+  setTimeout(finish,4500); // safety net
+  ov.addEventListener('click',finish);
+  const img=big.querySelector('img');
+  const ready=img.decode?img.decode().catch(()=>{}):Promise.resolve();
+  Promise.race([ready,new Promise(r=>setTimeout(r,800))]).then(()=>{
+    if(done)return;
+    const r=target.getBoundingClientRect();
+    Object.assign(big.style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});
+    const S=Math.min(2.8,(innerWidth*0.86)/r.width);
+    const dx=innerWidth/2-(r.left+r.width/2),dy=innerHeight/2-(r.top+r.height/2);
+    big.style.transform=`translate(${dx}px,${dy}px) scale(${S})`;
+    requestAnimationFrame(()=>requestAnimationFrame(()=>big.classList.add('shown')));
+    setTimeout(()=>{
+      if(done)return;
+      big.classList.add('flying');big.style.transform='none';ov.classList.add('leaving');
+      setTimeout(()=>{root.classList.remove('intro');},850);
+      setTimeout(finish,1150);
+    },1250);
+  });
+})();
 </script>
 <script src="/js/i18n.js"></script>
 <script>window.FY_LANG.init()</script>
