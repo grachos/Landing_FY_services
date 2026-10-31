@@ -154,7 +154,8 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 
 /* story */
 .story{background:#000;border-block:1px solid var(--line)}
-.story .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:3.5rem;align-items:center}
+.story .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3.5rem;align-items:start}
+.story .monogram{position:sticky;top:110px}
 .monogram{display:grid;gap:1rem}
 .monogram .pair{display:grid;grid-template-columns:120px 1fr;gap:.2rem 1.4rem;align-items:center}
 .monogram .letter{height:90px;width:auto;justify-self:center;filter:drop-shadow(0 4px 14px rgba(217,178,95,.2))}
@@ -163,8 +164,10 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 .monogram .pair span strong{display:block;color:var(--text);font-size:1.15rem}
 .fy-def{border:1px solid var(--line);border-radius:8px;padding:1rem 1.2rem;font-size:.92rem;color:var(--muted)}
 .fy-def dfn{font-style:normal;font-weight:700;color:var(--gold-hi)}
-.story-text{display:grid;gap:1rem;color:#cfd4df;font-size:1.05rem;max-width:36rem}
+.story-text{display:grid;gap:1rem;color:#cfd4df;font-size:1.02rem;max-width:40rem}
 .story-text h2{font-size:clamp(2.1rem,4vw,3rem);margin-bottom:.4rem}
+.story-text .legal-note{font-size:.78rem;line-height:1.5;color:var(--muted);border-top:1px solid var(--line);padding-top:.9rem;margin-top:.4rem}
+.story-text strong{color:var(--text)}
 .story-text blockquote{margin:.6rem 0 0;font:500 1.6rem/1.25 var(--f-script);font-style:italic;color:var(--gold-hi)}
 
 /* mission */
@@ -240,6 +243,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
 @media (max-width:900px){
   nav.links{display:none}
   .hero .wrap,.story .wrap{grid-template-columns:1fr;gap:2.2rem}
+  .story .monogram{position:static}
   .hero .wrap{padding-block:3rem}
   .lines,.mv{grid-template-columns:1fr}
   .line.main{grid-row:auto}
@@ -280,7 +284,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="FY Business & Immigration Solutions, inicio"><img src="assets/fy-mark.png" alt="" width="81" height="52"><span class="brand-text" aria-hidden="true"><b class="gold-text">FY Business</b><span>&amp; Immigration Solutions</span></span></a>
     <nav class="links" aria-label="Secciones">
-      <a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#historia">Nosotros</a><a href="#contacto">Contacto</a>
+      <a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#historia">Nuestra historia</a><a href="#contacto">Contacto</a>
     </nav>
     <div class="head-actions"><button class="lang" id="lang-btn" type="button" aria-label="Switch to English">EN</button>
     <a class="btn btn-wa head-cta" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Escríbenos</span></a></div>
@@ -432,12 +436,16 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
         <p class="fy-def"><dfn>FY · Fiscal Year</dfn> — año fiscal: el período con el que las empresas planifican, organizan y crecen.</p>
       </div>
       <div class="story-text">
-        <p class="eyebrow">La historia detrás de FY</p>
-        <h2>Dos iniciales, una visión</h2>
-        <p>FY nace de la unión de dos nombres y una meta compartida: Franklin e Ysbell. Sus iniciales marcan el comienzo de un proyecto construido con esfuerzo, compromiso y confianza.</p>
-        <p>En el mundo empresarial, FY también significa <em>Fiscal Year</em>, el año fiscal. Para nosotros representa planificación, crecimiento y nuevas oportunidades.</p>
-        <p>Creemos que cada persona merece oportunidades para avanzar, cada familia merece orientación y cada emprendedor necesita herramientas para construir sus sueños.</p>
-        <blockquote>No se trata solo de prestar un servicio, sino de ayudar a abrir caminos y construir futuros.</blockquote>
+        <p class="eyebrow">Nuestra historia</p>
+        <h2>Dos trayectorias, una visión compartida</h2>
+        <p>FY Business &amp; Immigration Solutions nace de la experiencia, el compromiso y las vivencias de sus fundadores, Ysbell Matheus y Franklin Perea.</p>
+        <p>Como inmigrantes que han recorrido el camino de la adaptación y la búsqueda de nuevas oportunidades, compartimos el mismo estatus, los mismos retos y ese sentimiento profundo de empatía que nos impulsa a ir más allá. Vivir ese proceso en carne propia es lo que hoy nos motiva a tender la mano y ayudar a más y más personas a estructurar su futuro con seguridad y confianza.</p>
+        <p><strong>Ysbell</strong>, abogada titulada en Venezuela, inició su trayectoria en la gestoría migratoria en Chile y continuó en Estados Unidos como preparadora de documentos migratorios, fortaleciendo sus conocimientos mediante el estudio y la capacitación constante.</p>
+        <p><strong>Franklin</strong>, ingeniero mecánico con formación de posgrado en gerencia de proyectos y mantenimiento de equipos mineros, aporta herramientas clave de planificación, organización y gestión al desarrollo operativo de la empresa.</p>
+        <p>La confianza de nuestros clientes y el crecimiento de nuestra labor nos impulsaron a unir capacidades para crear un espacio dedicado a la preparación documental migratoria y de impuestos, ofreciendo atención personalizada, procesos organizados y un compromiso férreo con la transparencia.</p>
+        <p>FY representa las iniciales de Franklin e Ysbell. En el mundo empresarial, también significa <em>Fiscal Year</em> (año fiscal): un concepto que para nosotros encarna planificación, crecimiento y nuevas rutas hacia el éxito.</p>
+        <blockquote>Tu futuro merece la mejor decisión.</blockquote>
+        <p class="legal-note"><strong>Nota legal:</strong> El título de abogada de Ysbell corresponde a Venezuela. En Estados Unidos no ofrecemos asesoría ni representación legal. No garantizamos resultados.</p>
       </div>
     </div>
   </section>

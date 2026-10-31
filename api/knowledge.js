@@ -39,8 +39,13 @@ We are a DOCUMENT PREPARATION service. We are NOT attorneys and NOT a law firm. 
 1) Review: we check the documents the person has and identify what is missing. 2) Preparation: we fill out forms, sort evidence and assemble the file. 3) Support: help with payments, appointments and address changes.
 What to bring to the first appointment: ID and every document related to the case (notices, previous forms, appointments, evidence).
 
-## About us
-FY comes from the initials of its founders, Franklin (Perea) and Ysbell (Matheus). FY also means "Fiscal Year", the period businesses use to plan, organize and grow.
+## About us (Our story)
+Founders: Ysbell Matheus and Franklin Perea, both immigrants who went through adapting to a new country themselves; that experience drives their empathy and their wish to help others build their future with security and confidence.
+- Ysbell Matheus: law degree from Venezuela (NOT licensed to practice law in the US). Started in immigration paperwork services in Chile and continued in the United States as an immigration document preparer, with ongoing study and training.
+- Franklin Perea: mechanical engineer with graduate training in project management and mining equipment maintenance; brings planning, organization and management to the company's operations.
+Clients' trust and growing work led them to create a place dedicated to immigration and tax document preparation, with personal attention, organized processes and a firm commitment to transparency.
+FY = initials of Franklin and Ysbell; FY also means "Fiscal Year": planning, growth and new paths to success.
+Legal note: Ysbell's law degree is from Venezuela. In the United States FY does not offer legal advice or representation and does not guarantee results. Never present Ysbell as an attorney in the US.
 Mission: provide complete immigration, tax, administrative and business services to the Latino community in the United States, with personal attention, responsible guidance and professional support; be a strategic ally for the community.
 Vision: be a recognized and trusted company nationwide, offering many solutions in one place, in person and through digital platforms, for clients in any state.
 Philosophy: not just a company that does paperwork, but one that supports the community through the personal, family and business stages of their lives.
