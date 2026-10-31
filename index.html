@@ -63,7 +63,7 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backgrou
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--night)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.6rem}
 .brand{display:flex;align-items:center;gap:.8rem;text-decoration:none}
-.brand img{height:52px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(217,178,95,.25))}
+.brand img{height:58px;width:auto;display:block;filter:drop-shadow(0 2px 8px rgba(217,178,95,.25))}
 .brand-text{display:grid;gap:.18rem;line-height:1;border-left:1px solid var(--gold-lo);padding-left:.8rem}
 .brand-text b{font:700 1.05rem/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase}
 .brand-text span{font:600 .64rem/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
@@ -79,7 +79,7 @@ nav.links a:hover{color:var(--gold-hi)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,var(--night) 0%,rgba(4,9,23,.95) 48%,rgba(4,9,23,.35) 75%,rgba(4,9,23,.15) 100%),linear-gradient(0deg,var(--night) 0%,transparent 30%)}
 @media (max-width:900px){.hero::before{width:100%;opacity:.35;background-position:center top}}
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3rem;align-items:center;padding-block:4.5rem 4rem}
-.hero h1{font-size:clamp(2.7rem,6.4vw,5.1rem);margin:1rem 0 1.1rem}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.4rem);margin:1rem 0 1.1rem}
 .hero h1 .script{display:block;font-size:.62em;color:var(--text);margin-top:.15em}
 .hero .lead{font-size:1.1rem;color:#d5d9e3;max-width:34rem}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
@@ -208,6 +208,11 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 footer{border-top:1px solid var(--line);background:#000;padding-block:2.5rem 6rem;font-size:.85rem;color:var(--muted)}
 footer .wrap{display:grid;gap:1.4rem}
 footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.hero-brand{display:flex;align-items:center;gap:1.6rem;margin-bottom:2rem}
+.hero-brand img{height:150px;width:auto;filter:drop-shadow(0 8px 30px rgba(217,178,95,.35))}
+.hero-brand .brand-text{gap:.5rem;padding-left:1.6rem;border-left-width:2px}
+.hero-brand .brand-text b{font-size:2.6rem;letter-spacing:.12em}
+.hero-brand .brand-text span{font-size:1rem;letter-spacing:.24em}
 .foot-brand{display:flex;align-items:center;gap:1.2rem}
 .foot-brand img{height:96px;width:auto}
 .foot-brand .brand-text b{font-size:1.6rem}
@@ -259,7 +264,12 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
 }
 @media (max-width:600px){
   .head-cta span{display:none}
-  .brand img{height:42px}
+  .brand img{height:46px}
+  .hero-brand{gap:1rem;margin-bottom:1.4rem}
+  .hero-brand img{height:84px}
+  .hero-brand .brand-text{padding-left:1rem;gap:.35rem}
+  .hero-brand .brand-text b{font-size:1.45rem;letter-spacing:.08em}
+  .hero-brand .brand-text span{font-size:.62rem;letter-spacing:.14em}
   .brand-text b{font-size:.92rem;letter-spacing:.1em}
   .brand-text span{font-size:.54rem;letter-spacing:.12em}
   .foot-brand img{height:72px}
@@ -304,6 +314,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
   <section class="hero" style="padding:0">
     <div class="wrap">
       <div>
+        <div class="hero-brand"><img src="assets/fy-mark.png" alt="FY Business & Immigration Solutions" width="233" height="150"><span class="brand-text" aria-hidden="true"><b class="gold-text">FY Business</b><span>&amp; Immigration Solutions</span></span></div>
         <p class="eyebrow">Atlanta, GA · Atención en español</p>
         <h1><span class="gold-text">Trámites migratorios, taxes y negocios</span><span class="script">Tu futuro merece la mejor decisión.</span></h1>
         <p class="lead">Preparamos tus formularios, organizamos tus documentos y te acompañamos en cada gestión personal, familiar y empresarial. Todo en un solo lugar.</p>
