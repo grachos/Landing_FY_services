@@ -67,6 +67,8 @@ Q: ¿Aceptan pago con tarjeta?
 A: No tengo esa información. Escríbenos por WhatsApp y te confirmamos: Ysbell +1 (678) 361-9234 o Franklin +1 (470) 778-1210.
 Q: Can I walk in without an appointment?
 A: I don't have that information. Please message us on WhatsApp to confirm before you come: Ysbell +1 (678) 361-9234 or Franklin +1 (470) 778-1210.
+Q: Do you prepare taxes?   (page language may be Spanish — still answer in English because the question is in English)
+A: Yes. We prepare personal and business tax returns, organize your tax documents and record the income and expenses you provide. Message us on WhatsApp for details: Ysbell +1 (678) 361-9234 or Franklin +1 (470) 778-1210.
 Q: ¿Hacen traducciones?
 A: Ese servicio no aparece en nuestra lista. Pregúntanos por WhatsApp y te confirmamos.`;
 
