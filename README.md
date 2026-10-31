@@ -22,6 +22,8 @@ Import the repo in Vercel → Framework preset: **Other** → no build command, 
 |---|---|---|
 | `OPENAI_API_KEY` | yes | — |
 | `OPENAI_MODEL` | no | `gpt-5-mini` |
+| `SUPABASE_URL` | no | — (enables saving chat logs to table `chat_logs`) |
+| `SUPABASE_SERVICE_ROLE_KEY` | no | — |
 | `OPENAI_REASONING_EFFORT` | no | `low` (only for gpt-5 / o-series models) |
 
 Redeploy after adding or changing a variable.
@@ -30,6 +32,19 @@ Redeploy after adding or changing a variable.
 - Answers only from `api/knowledge.js`; never gives legal advice or eligibility opinions.
 - Max 600 chars per message, last 12 messages sent, ~20 requests per IP every 10 min (best effort).
 - Requests from other origins are rejected.
+
+## Anonymous chat logs
+Each question/answer is redacted (emails, phones, A-numbers, SSN-like numbers, dates, passport-like ids → `[dato oculto]`) and written to Vercel runtime logs (search `chat_log`). No IP or name is stored. To also keep them in Supabase, create:
+```sql
+create table chat_logs (
+  id bigint generated always as identity primary key,
+  created_at timestamptz not null default now(),
+  session_id text, lang text, question text, answer text
+);
+alter table chat_logs enable row level security; -- only the service role key can write/read
+-- 90-day retention (pg_cron): select cron.schedule('purge_chat_logs','0 3 * * *',$$delete from chat_logs where created_at < now() - interval '90 days'$$);
+```
+then set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` in Vercel and redeploy.
 
 ## Pending
 - Contact email and social media links

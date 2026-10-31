@@ -1,6 +1,7 @@
 // Vercel serverless function: POST /api/chat  { messages: [{role, content}], lang: 'es'|'en' }
 // Env: OPENAI_API_KEY (required), OPENAI_MODEL (optional, default gpt-5-mini), OPENAI_REASONING_EFFORT (optional, default low)
 const { KNOWLEDGE, EXAMPLES } = require('./knowledge');
+const { logChat } = require('./_log');
 
 const MAX_TURNS = 12;        // messages kept from the conversation
 const MAX_CHARS = 600;       // per user message
@@ -85,6 +86,7 @@ module.exports = async (req, res) => {
     }
     const reply = data.choices?.[0]?.message?.content?.trim();
     if (!reply) return res.status(502).json({ error: 'empty' });
+    await logChat({ sessionId: body?.sessionId, lang, question: clean[clean.length - 1].content, answer: reply });
     return res.status(200).json({ reply });
   } catch (e) {
     console.error('chat_failed', e);

@@ -8,6 +8,7 @@
   const send = document.getElementById('chat-send');
   const chips = document.getElementById('chat-chips');
   const history = [];
+  const sessionId = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(36).slice(2));
   const WELCOME = {
     es: '¡Hola! Soy el asistente de FY. Te cuento sobre nuestros servicios, horarios y cómo contactarnos. ¿En qué te ayudo?',
     en: "Hi! I'm the FY assistant. I can tell you about our services, hours and how to reach us. How can I help?",
@@ -48,7 +49,7 @@
       const r = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history.slice(-12), lang }),
+        body: JSON.stringify({ messages: history.slice(-12), lang, sessionId }),
       });
       const data = await r.json().catch(() => ({}));
       typing.remove();

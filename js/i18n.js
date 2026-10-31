@@ -136,6 +136,7 @@ window.FY_EN = {
   "Asistente FY": "FY Assistant",
   "Asistente virtual con IA. Responde sobre nuestros servicios; no da asesoría legal.": "AI virtual assistant. It answers questions about our services; it does not give legal advice.",
   "Escribe tu pregunta…": "Type your question…",
+  "Guardamos las preguntas sin datos personales para mejorar el servicio.": "We save questions without personal data to improve our service.",
   "Enviar": "Send",
   "Abrir chat": "Open chat",
   "Cerrar chat": "Close chat",
