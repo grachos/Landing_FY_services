@@ -155,6 +155,9 @@ dialog.lb{border:0;padding:0;background:transparent;max-width:none;max-height:no
 dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 .lb-in{display:grid;grid-template-rows:auto 1fr auto;height:100%;padding:calc(12px + env(safe-area-inset-top,0px)) var(--gutter-r) calc(12px + env(safe-area-inset-bottom,0px)) var(--gutter-l);gap:.6rem}
 .lb-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--text);font-weight:600}
+.lb-act{display:flex;gap:.5rem;align-items:center}
+.lb-act .btn{min-height:44px;padding:.5rem .9rem;font-size:.88rem}
+@media (max-width:600px){.lb-top{flex-wrap:wrap}.lb-top>span{flex:1 1 100%;order:2}.lb-act{width:100%;justify-content:space-between}}
 .lb-stage{min-height:0;display:flex;align-items:center;justify-content:center}
 .lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px}
 .lb-nav{display:flex;justify-content:center;gap:.75rem}
@@ -322,7 +325,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
       <a href="#servicios">Servicios</a><a href="#proceso">Cómo trabajamos</a><a href="#historia">Nuestra historia</a><a href="#contacto">Contacto</a>
     </nav>
     <div class="head-actions"><button class="lang" id="lang-btn" type="button" aria-label="Switch to English">EN</button>
-    <a class="btn btn-wa head-cta" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Escríbenos</span></a></div>
+    <a data-wa="general" class="btn btn-wa head-cta" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Escríbenos</span></a></div>
   </div>
 </header>
 
@@ -334,7 +337,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
         <h1><span class="gold-text">Trámites migratorios, taxes y negocios</span><span class="script">Tu futuro merece la mejor decisión.</span></h1>
         <p class="lead">Preparamos tus formularios, organizamos tus documentos y te acompañamos en cada gestión personal, familiar y empresarial. Todo en un solo lugar.</p>
         <div class="ctas">
-          <a class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Escríbenos por WhatsApp</a>
+          <a data-wa="general" class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Escríbenos por WhatsApp</a>
           <a class="btn btn-ghost" href="#servicios">Ver servicios</a>
         </div>
         <div class="meta"><span>Lunes a sábado</span><span>Atención presencial y por WhatsApp</span><span>Revisión documental de tu caso</span><span>Plan de pago en cuotas</span></div>
@@ -509,7 +512,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
           <h3>Ysbell Matheus</h3>
           <a class="phone" id="p-ys" href="tel:+16783619234">(678) 361-9234</a>
           <div class="row">
-            <a class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+            <a data-wa="ysbell" class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
             <button class="btn copy" type="button" data-copy="+1 678-361-9234">Copiar número</button>
           </div>
         </div>
@@ -517,7 +520,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
           <h3>Franklin Perea</h3>
           <a class="phone" id="p-fr" href="tel:+14707781210">(470) 778-1210</a>
           <div class="row">
-            <a class="btn btn-wa" href="https://wa.me/14707781210" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+            <a data-wa="franklin" class="btn btn-wa" href="https://wa.me/14707781210" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
             <button class="btn copy" type="button" data-copy="+1 470-778-1210">Copiar número</button>
           </div>
         </div>
@@ -538,7 +541,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
           <p>Contamos con diferentes formas de pago y planes de pago por cuotas, para que no tengas que pagar todo de una vez. Escríbenos y te indicamos la opción que mejor se adapte a ti.</p>
           <ul><li>Diferentes formas de pago</li><li>Pago por cuotas</li></ul>
         </div>
-        <a class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Consultar formas de pago</a>
+        <a data-wa="pay" class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Consultar formas de pago</a>
       </div>
     </div>
   </section>
@@ -574,7 +577,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
 
 <dialog class="lb" id="lb" aria-label="Vista ampliada">
   <div class="lb-in">
-    <div class="lb-top"><span id="lb-cap"></span><button class="ib" type="button" id="lb-x" aria-label="Cerrar">✕</button></div>
+    <div class="lb-top"><span id="lb-cap"></span><div class="lb-act"><a data-wa="service" id="lb-wa" class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg><span>Preguntar por este trámite</span></a><button class="ib" type="button" id="lb-x" aria-label="Cerrar">✕</button></div></div>
     <div class="lb-stage" id="lb-stage"><img id="lb-img" alt=""></div>
     <div class="lb-nav"><button class="ib" type="button" id="lb-prev" aria-label="Anterior">‹ Anterior</button><span id="lb-n" style="align-self:center;color:var(--muted);font-variant-numeric:tabular-nums"></span><button class="ib" type="button" id="lb-next" aria-label="Siguiente">Siguiente ›</button></div>
   </div>
@@ -592,7 +595,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
 </section>
 
 <div class="mbar">
-  <a class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
+  <a data-wa="general" class="btn btn-wa" href="https://wa.me/16783619234" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>WhatsApp</a>
   <a class="btn btn-gold" href="#contacto"><svg><use href="#i-phone"/></svg>Llamar</a>
 </div>
 
@@ -618,7 +621,7 @@ document.getElementById('g-more').addEventListener('click',()=>{gExpanded=true;r
 document.addEventListener('fy:lang',renderGallery);
 renderGallery();
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img');let cur=0;
-function show(i){cur=(i+figs.length)%figs.length;const im=figs[cur].querySelector('img');lbImg.src=im.src;lbImg.alt=im.alt;document.getElementById('lb-cap').textContent=figs[cur].querySelector('figcaption').textContent;document.getElementById('lb-n').textContent=(cur+1)+' / '+figs.length}
+function show(i){cur=(i+figs.length)%figs.length;const im=figs[cur].querySelector('img');lbImg.src=im.src;lbImg.alt=im.alt;document.getElementById('lb-cap').textContent=figs[cur].querySelector('figcaption').textContent;document.getElementById('lb-n').textContent=(cur+1)+' / '+figs.length;setWa()}
 allFigs.forEach(f=>f.querySelector('button').addEventListener('click',()=>{show(figs.indexOf(f));lb.showModal?lb.showModal():lb.setAttribute('open','')}));
 const close=()=>lb.close?lb.close():lb.removeAttribute('open');
 document.getElementById('lb-x').onclick=close;document.getElementById('lb-prev').onclick=()=>show(cur-1);document.getElementById('lb-next').onclick=()=>show(cur+1);
@@ -655,7 +658,28 @@ let x0=null;lb.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive
 })();
 </script>
 <script src="/js/i18n.js"></script>
-<script>window.FY_LANG.init()</script>
+<script>
+// Prefilled WhatsApp first message per button, in the active language
+const WA_NUM={ysbell:'16783619234',franklin:'14707781210'};
+const WA_MSG={
+  general:{es:'Hola, vi su página web y me interesa recibir información sobre sus servicios.',en:'Hi, I saw your website and would like to get information about your services.'},
+  ysbell:{es:'Hola Ysbell, vi la página de FY y me gustaría recibir información sobre un trámite.',en:'Hi Ysbell, I saw the FY website and would like information about a service.'},
+  franklin:{es:'Hola Franklin, vi la página de FY y me gustaría recibir información sobre un trámite.',en:'Hi Franklin, I saw the FY website and would like information about a service.'},
+  pay:{es:'Hola, quisiera conocer las formas de pago y los planes de pago por cuotas.',en:'Hi, I would like to know your payment options and installment plans.'},
+  service:{es:'Hola, vi en su página el trámite "{s}" y me interesa saber más.',en:'Hi, I saw "{s}" on your website and would like to know more.'}
+};
+function setWa(){
+  const lang=window.FY_LANG?window.FY_LANG.get():'es';
+  document.querySelectorAll('[data-wa]').forEach(a=>{
+    const k=a.dataset.wa,num=WA_NUM[k]||'16783619234';
+    let msg=(WA_MSG[k]||WA_MSG.general)[lang];
+    if(k==='service'){const c=document.getElementById('lb-cap').textContent.trim();msg=msg.replace('{s}',c)}
+    a.href='https://wa.me/'+num+'?text='+encodeURIComponent(msg);
+  });
+}
+document.addEventListener('fy:lang',setWa);
+</script>
+<script>window.FY_LANG.init();setWa()</script>
 <script src="/js/chat.js"></script>
 </body>
 </html>
