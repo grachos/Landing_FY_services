@@ -1,0 +1,16 @@
+{
+  "name": "landing-fy-services",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FY Business & Immigration Solutions landing page with AI chat",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

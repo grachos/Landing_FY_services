@@ -12,7 +12,14 @@ Static landing page (HTML + CSS + vanilla JS, no build step) for FY Business & I
 - `vercel.json` — clean URLs and cache headers for assets
 
 ## Local preview
-`npx vercel dev` (runs the chat API too). Opening `index.html` directly works except for the chat.
+`npm install && npm start` → http://localhost:3000 (chat included, needs `OPENAI_API_KEY`), or `npx vercel dev`. Opening `index.html` directly works except for the chat.
+
+## Deploy (Hostinger — Node.js app)
+1. hPanel → Websites → Add website → **Node.js Apps** → import this GitHub repo (branch `main`).
+2. Framework: **Express** (or Other) · Node version **18+** · Build command: *(empty)* · Start command / entry file: `npm start` / `server.js`.
+3. Environment variables: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_REASONING_EFFORT`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
+4. Deploy, then point the domain to the app.
+`server.js` serves the static files and mounts the same `api/chat.js` handler used on Vercel. Server-side files (`/api/*.js`, `server.js`, `package.json`) are never served.
 
 ## Deploy (Vercel)
 Import the repo in Vercel → Framework preset: **Other** → no build command, output directory `.`.
