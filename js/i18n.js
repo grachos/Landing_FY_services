@@ -139,6 +139,7 @@ window.FY_EN = {
   "¿Cómo puedo pagar?": "How can I pay?",
   "Tenemos diferentes formas de pago y planes de pago por cuotas. Escríbenos por WhatsApp y te indicamos la opción que mejor se adapte a ti.": "We have several payment methods and installment plans. Message us on WhatsApp and we'll tell you the option that best fits you.",
   "Preguntar por este trámite": "Ask about this service",
+  "Correo": "Email",
   "Copiado": "Copied",
   "Completa este campo": "Please fill out this field",
   "Horario de atención": "Business hours",

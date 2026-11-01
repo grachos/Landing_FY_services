@@ -205,6 +205,10 @@ dialog.lb::backdrop{background:rgba(0,0,0,.92)}
 .copy{background:transparent;border:1px solid var(--line);color:var(--muted)}
 .hours dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.5rem 1rem;font-size:.95rem}
 .hours dt{color:var(--muted)}
+.mail{display:grid;gap:.15rem;border-top:1px solid var(--line);padding-top:.7rem;font-size:.92rem}
+.mail span{color:var(--muted);font-size:.8rem}
+.mail a,.foot-mail{color:var(--gold-hi);text-decoration:none;overflow-wrap:anywhere}
+.mail a:hover,.foot-mail:hover{text-decoration:underline}
 .hours dd{margin:0;font-weight:600;font-variant-numeric:tabular-nums}
 .pay{margin-top:1.25rem;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:1.2rem;align-items:center;padding:1.4rem 1.6rem;border:1px solid var(--gold-lo);border-radius:10px;background:linear-gradient(120deg,#13203f,var(--ink) 70%)}
 .pay>svg{width:40px;height:40px;color:var(--gold)}
@@ -541,6 +545,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
             <dt>Domingos</dt><dd>Cerrado</dd>
           </dl>
           <p style="color:var(--muted);font-size:.9rem">Atlanta, Georgia</p>
+          <p class="mail"><span>Correo</span><a href="mailto:info@fy.solutionsbusiness.org">info@fy.solutionsbusiness.org</a></p>
         </div>
       </div>
       <div class="pay">
@@ -580,7 +585,7 @@ footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-item
       <p><strong>Aviso importante:</strong> FY Business &amp; Immigration Solutions no es un bufete de abogados. Ofrecemos servicios de preparación documental. No ofrecemos representación ni asesoría legal. No garantizamos resultados migratorios.</p>
       <p lang="en"><strong>Notice:</strong> We are not attorneys and cannot give legal advice or represent you before USCIS or immigration court. We provide document preparation services only.</p>
     </div>
-    <p>© <span id="yr">2026</span> FY Business &amp; Immigration Solutions · Atlanta, GA</p>
+    <p>© <span id="yr">2026</span> FY Business &amp; Immigration Solutions · Atlanta, GA · <a class="foot-mail" href="mailto:info@fy.solutionsbusiness.org">info@fy.solutionsbusiness.org</a></p>
   </div>
 </footer>
 

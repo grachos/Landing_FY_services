@@ -18,7 +18,7 @@ function redact(text) {
 
 // Our own WhatsApp numbers appear in answers on purpose; keep them readable.
 function redactAnswer(text) {
-  const keep = { '+1 (678) 361-9234': '§1', '+1 (470) 778-1210': '§2', '16783619234': '§3', '14707781210': '§4' };
+  const keep = { '+1 (678) 361-9234': '§1', '+1 (470) 778-1210': '§2', '16783619234': '§3', '14707781210': '§4', 'info@fy.solutionsbusiness.org': '§5' };
   let s = String(text || '');
   for (const [k, v] of Object.entries(keep)) s = s.split(k).join(v);
   s = redact(s);

@@ -8,6 +8,7 @@ Language: Spanish (and English).
 ## Contact
 - Ysbell Matheus: +1 (678) 361-9234 (WhatsApp and phone) — https://wa.me/16783619234
 - Franklin Perea: +1 (470) 778-1210 (WhatsApp and phone) — https://wa.me/14707781210
+- Email: info@fy.solutionsbusiness.org
 ## Business hours (Eastern Time)
 - Monday to Friday: 9:00 a.m. – 6:00 p.m.
 - Saturday: 9:00 a.m. – 3:00 p.m.
@@ -58,7 +59,7 @@ Philosophy: not just a company that does paperwork, but one that supports the co
 - Prices, fees, discounts, exact installment terms (number of payments, down payment, interest)
 - Whether walk-ins are accepted or an appointment is required
 - Exact office address, parking, directions
-- Email, website other than this one, social media
+- Website other than this one, social media
 - Processing times or approval times of USCIS / courts
 - Online/video appointments, home visits
 - Any service not listed above (certified document translations, driver's licenses, notary, insurance, etc.). Note: interpreting at USCIS appointments IS offered; certified written translations are NOT listed.
