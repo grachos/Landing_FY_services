@@ -17,7 +17,9 @@ Static landing page (HTML + CSS + vanilla JS, no build step) for FY Business & I
 ## Deploy (Hostinger — Node.js app)
 1. hPanel → Websites → Add website → **Node.js Apps** → import this GitHub repo (branch `main`).
 2. Framework: **Express** (or Other) · Node version **18+** · Build command: *(empty)* · Start command / entry file: `npm start` / `server.js`.
-3. Environment variables: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_REASONING_EFFORT`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
+3. Environment variables: `OPENAI_API_KEY` (required), optional `OPENAI_MODEL`, `OPENAI_REASONING_EFFORT`.
+   To save chat conversations in Hostinger MySQL add: `DB_HOST`, `DB_PORT` (3306), `DB_USER`, `DB_PASSWORD`, `DB_NAME` (optional `CHAT_LOG_RETENTION_DAYS`, default 90).
+   The table `chat_logs` is created automatically on the first message.
 4. Deploy, then point the domain to the app.
 `server.js` serves the static files and mounts the same `api/chat.js` handler used on Vercel. Server-side files (`/api/*.js`, `server.js`, `package.json`) are never served.
 
@@ -41,7 +43,7 @@ Redeploy after adding or changing a variable.
 - Requests from other origins are rejected.
 
 ## Anonymous chat logs
-Each question/answer is redacted (emails, phones, A-numbers, SSN-like numbers, dates, passport-like ids → `[dato oculto]`) and written to Vercel runtime logs (search `chat_log`). No IP or name is stored. To also keep them in Supabase, create:
+Stored in MySQL when `DB_*` variables are set (Hostinger), and/or Supabase when `SUPABASE_*` are set. Each question/answer is redacted (emails, phones, A-numbers, SSN-like numbers, dates, passport-like ids → `[dato oculto]`) and written to Vercel runtime logs (search `chat_log`). No IP or name is stored. To also keep them in Supabase, create:
 ```sql
 create table chat_logs (
   id bigint generated always as identity primary key,
@@ -56,3 +58,11 @@ then set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` in Vercel and redeploy.
 ## Pending
 - Contact email and social media links
 - Custom domain
+
+### Useful queries (MySQL)
+```sql
+-- latest conversations
+SELECT created_at, session_id, lang, question, answer FROM chat_logs ORDER BY id DESC LIMIT 50;
+-- questions per day
+SELECT DATE(created_at) d, COUNT(*) n FROM chat_logs GROUP BY d ORDER BY d DESC;
+```
